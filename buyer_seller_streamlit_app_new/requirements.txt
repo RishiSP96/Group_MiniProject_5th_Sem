@@ -1,0 +1,14 @@
+streamlit
+streamlit-autorefresh
+ccxt
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+yfinance
+requests
+feedparser
+python-binance
+google-generativeai
+scipy
