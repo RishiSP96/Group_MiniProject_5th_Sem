@@ -1,11 +1,21 @@
 # ai_module.py
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
 
-# ====== Replace with your actual Gemini API key ======
-API_KEY = "AIzaSyCPyNWhJutIv1v-u6gckeQkHoP94J3QqGY"
+# Load environment variables from .env file
+load_dotenv()
+
+# ====== Get API key from environment variable ======
+# Set your API key as an environment variable: export GEMINI_API_KEY="your-key-here"
+# Or create a .env file with: GEMINI_API_KEY=your-key-here
+API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Configure Gemini with your API key
-genai.configure(api_key=API_KEY)
+if API_KEY:
+    genai.configure(api_key=API_KEY)
+else:
+    print("Warning: GEMINI_API_KEY environment variable not set. AI features will not work.")
 
 def ask_gemini(question, context=""):
     """

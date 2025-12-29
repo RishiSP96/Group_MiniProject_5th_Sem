@@ -30,6 +30,33 @@ This repository contains a collection of Streamlit dashboards for market analysi
 pip install -r requirements.txt
 ```
 
+## Configuration
+
+### Setting up Gemini API Key (for AI features)
+
+**IMPORTANT:** Never commit your API key to git! Use environment variables instead.
+
+1. Copy the example environment file:
+   ```bash
+   cp env.example .env
+   ```
+
+2. Edit `.env` and add your Gemini API key:
+   ```
+   GEMINI_API_KEY=your-actual-api-key-here
+   ```
+
+3. The `.env` file is already in `.gitignore` and won't be committed.
+
+Alternatively, you can set it as an environment variable:
+```bash
+# On Windows (PowerShell)
+$env:GEMINI_API_KEY="your-api-key-here"
+
+# On Linux/Mac
+export GEMINI_API_KEY="your-api-key-here"
+```
+
 ## Running the main app
 
 From the project root:
@@ -38,10 +65,9 @@ From the project root:
 streamlit run buyer_seller_app.py
 ```
 
-Make sure to set a valid **Gemini API key** inside `ai_module.py` before using the AI features.
-
 ## Notes
 
 - All data sources used are public/free (Binance, CoinGecko, RSS feeds, etc.).
 - Some dashboards rely on real-time APIs; if requests fail, the app will show an error in the UI.
 - This project is intended for educational and experimental purposes, **not** financial advice.
+

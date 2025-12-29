@@ -12,3 +12,5 @@ feedparser
 python-binance
 google-generativeai
 scipy
+python-dotenv
+
